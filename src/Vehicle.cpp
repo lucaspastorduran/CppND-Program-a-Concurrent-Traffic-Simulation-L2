@@ -1,5 +1,6 @@
 #include <iostream>
 #include <random>
+#include <future>
 #include "Street.h"
 #include "Intersection.h"
 #include "Vehicle.h"
@@ -77,6 +78,7 @@ void Vehicle::drive()
                 // Task L2.1 : Start up a task using std::async which takes a reference to the method Intersection::addVehicleToQueue, 
                 // the object _currDestination and a shared pointer to this using the get_shared_this() function. 
                 // Then, wait for the data to be available before proceeding to slow down.
+                std::future<void> ftr = std::async(&Intersection::addVehicleToQueue, _currDestination, this->get_shared_this());
 
                 // slow down and set intersection flag
                 _speed /= 10.0;
