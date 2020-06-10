@@ -1,4 +1,4 @@
-# CPPND: Program a Concurrent Traffic Simulation
+# CPPND: Program a Concurrent Traffic Simulation Part 2: Promises, Futures and async
 
 <img src="data/traffic_simulation.gif"/>
 
